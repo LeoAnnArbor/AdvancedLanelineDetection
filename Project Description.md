@@ -92,6 +92,8 @@ Here's a [link to my video result](./test_videos_output/project_video.mp4)
 
 ### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+Throughout implementing the pipeline, there are several improvements can be made:
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+1.  First is the lane detection step. More accurate lane detection algorithm can save a lot of trouble for later video pipeline. I find that current implementation is not that good at identifying land lines under dark or extreme bright conditions. Additionally, right now the pipeline does not work for road that has continuous turns as well. Therefore, being able to automatically determining the region of interest can also improve the effectiveness of lane line detection
+
+2. Another potential improvements is the on smoothing the output video. As demonstrated in the “challenge video”, output right now still contains some jittering frames. In addition to use information such as predicted landline width and coefficients, some other criterias such as slope of the lane lines and intersections of lane lines can also facilitate catching outliers that are otherwise missed and hence improving the smoothness of output videos.  
