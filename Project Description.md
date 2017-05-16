@@ -78,10 +78,15 @@ I then detect the lane using sliding window histogram of the binary thresholded 
 ---
 
 ### Pipeline (video)
+The pipeline follows pretty much the steps for test images as I mentioned before. In case of facing “bad frames”, I added additional smoothing method. The “bad frame” consists three different scenarios:
 
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
+* No points detected in the frame
+* Lane lines predicted in the frame is too narrow or too wide
+* change of predicted coefficients is greater than 20% of the averaged coefficients
 
-Here's a [link to my video result](./project_video.mp4)
+When facing either one the these case, the predicted land line is substitute with the averaged predicted lane line of the previous 10 frames.
+
+Here's a [link to my video result](.test_videos_output/project_video.mp4)
 
 ---
 
