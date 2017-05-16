@@ -86,7 +86,7 @@ The pipeline follows pretty much the steps for test images as I mentioned before
 
 When facing either one the these case, the predicted land line is substitute with the averaged predicted lane line of the previous 10 frames.
 
-Here's a [link to my video result](.test_videos_output/project_video.mp4)
+Here's a [link to my video result](./test_videos_output/project_video.mp4)
 
 ---
 
